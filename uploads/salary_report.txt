@@ -1,0 +1,7 @@
+Employee Salary Report
+
+John : 100000
+Alex : 120000
+David : 150000
+
+Confidential

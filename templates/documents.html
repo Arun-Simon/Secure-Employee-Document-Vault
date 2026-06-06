@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Employee Documents</title>
+
+<style>
+
+body{
+    font-family:Arial;
+    background:#f4f6f9;
+    margin:0;
+}
+
+.header{
+    background:#1f2937;
+    color:white;
+    padding:20px;
+}
+
+.container{
+    padding:30px;
+}
+
+.search-box{
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:12px;
+
+    margin-bottom:20px;
+
+    box-shadow:
+    0px 2px 10px rgba(0,0,0,0.1);
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:white;
+
+    box-shadow:
+    0px 2px 10px rgba(0,0,0,0.1);
+}
+
+th{
+
+    background:#2563eb;
+
+    color:white;
+}
+
+th,td{
+
+    padding:12px;
+
+    border:1px solid #ddd;
+}
+
+.download{
+
+    text-decoration:none;
+
+    color:white;
+
+    background:#10b981;
+
+    padding:8px 12px;
+
+    border-radius:6px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<h1>📄 Employee Documents</h1>
+
+</div>
+
+<div class="container">
+
+<div class="search-box">
+
+<form method="POST">
+
+Employee ID:
+
+<input
+type="text"
+name="employee_id"
+required>
+
+<button>
+Search
+</button>
+
+</form>
+
+</div>
+
+{% if documents %}
+
+<table>
+
+<tr>
+
+<th>File Name</th>
+<th>Document Type</th>
+<th>Upload Time</th>
+<th>Download</th>
+
+</tr>
+
+{% for doc in documents %}
+
+<tr>
+
+<td>{{ doc.file_name }}</td>
+
+<td>{{ doc.document_type }}</td>
+
+<td>{{ doc.upload_time }}</td>
+
+<td>
+
+<a
+class="download"
+href="/download/{{ doc.employee_id }}/{{ doc.file_name }}">
+
+Download
+
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endif %}
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Upload Document</title>
+
+<style>
+
+body{
+    background:#f4f6f9;
+    font-family:Arial;
+    margin:0;
+}
+
+.header{
+    background:#1f2937;
+    color:white;
+    padding:20px;
+}
+
+.container{
+    padding:30px;
+}
+
+.form-card{
+
+    background:white;
+
+    max-width:600px;
+
+    padding:30px;
+
+    border-radius:12px;
+
+    box-shadow:
+    0px 2px 10px rgba(0,0,0,0.1);
+}
+
+input{
+
+    width:100%;
+
+    padding:10px;
+
+    margin-top:5px;
+
+    margin-bottom:15px;
+}
+
+button{
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:6px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<h1>📤 Upload Employee Document</h1>
+
+</div>
+
+<div class="container">
+
+<div class="form-card">
+
+<form
+method="POST"
+enctype="multipart/form-data">
+
+Employee ID
+
+<input
+type="text"
+name="employee_id"
+required>
+
+Document Type
+
+<input
+type="text"
+name="document_type"
+required>
+
+Select File
+
+<input
+type="file"
+name="file"
+required>
+
+<button type="submit">
+
+Upload Document
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+</html>
